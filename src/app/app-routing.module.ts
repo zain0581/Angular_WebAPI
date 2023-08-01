@@ -4,15 +4,22 @@ import { RouterModule, Routes } from '@angular/router';
 import { CoinDetailComponent } from './coin-detail/coin-detail.component';
 import { CoinListComponent } from './coin-list/coin-list.component';
 import { DashboardComponent } from './UserComponent/dashboard/dashboard.component';
-
 import { LoginComponent } from './login/login.component';
-import { NotFoundComponent } from './not-found/not-found.component';
 import { AuthGuard } from './guards/auth.guard';
 import { SignupComponent } from './signup/signup.component';
 import { AddCoinComponent } from './add-coin/add-coin.component';
 import { CryptoCurrencyComponent } from './crypto-currency/crypto-currency.component';
 import { IntegrationComponent } from './integration/integration.component';
 import { ReportsComponent } from './reports/reports.component';
+<<<<<<< HEAD
+=======
+import { TransactionsComponent } from './transactions/transactions.component';
+import { PricesComponent } from './prices/prices.component';
+import { WalletComponent } from './wallet/wallet.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+
+
+>>>>>>> bef9507fe3790f085c7ab454aa010309c6885cb1
 
 
 const routes: Routes = [
@@ -26,6 +33,12 @@ const routes: Routes = [
   {path:'crypto-currency',component:CryptoCurrencyComponent},
   {path:'Integration',component:IntegrationComponent},
   {path:'Reports',component:ReportsComponent},
+<<<<<<< HEAD
+=======
+  {path:'Transactions',component:TransactionsComponent},
+  {path:'Prices',component:PricesComponent},
+  {path:'Wallet',component:WalletComponent},
+>>>>>>> bef9507fe3790f085c7ab454aa010309c6885cb1
   {path :'**',component:NotFoundComponent},
  
 ];

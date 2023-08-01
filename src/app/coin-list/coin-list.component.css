@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 .align-center{
   display: inline-flex;
   align-items:center;
 }
+=======
+/* .align-center{
+  display: inline-flex;
+  align-items:center;
+} */
+>>>>>>> bef9507fe3790f085c7ab454aa010309c6885cb1
 
 .headder{
  
@@ -46,11 +53,47 @@
     z-index: 1;
   }
   
+<<<<<<< HEAD
   h1 {
     font-size: 2rem;
     margin-bottom: 1rem;
     color: rgb(55, 46, 46);
   }
+=======
+
+ 
+    .text {
+      margin-top: 40px;
+    
+    margin-bottom: 5px;
+      font-size: 36px;
+      display: inline-block;
+      color: rgb(75, 157, 224);
+      text-align: center;
+   
+      padding: 10px 20px;
+    
+      animation: lightning 2s linear infinite;
+    
+      opacity: 0.50; /* Adjust the opacity to reduce darkness */
+    }
+    
+    @keyframes lightning {
+      20% {
+        color: #000; /* Start with a dark color */
+        text-shadow:none; /* Remove any existing text shadow */
+      }
+      50% {
+        color: rgb(21, 226, 55); /* Transition to a light color */
+        text-shadow: none; /* Add a text shadow for emphasis */
+      }
+      20% {
+        color: rgb(0, 0, 0); /* Transition back to a dark color */
+        text-shadow: none; /* Remove the text shadow */
+      }
+    }
+
+>>>>>>> bef9507fe3790f085c7ab454aa010309c6885cb1
   
   p {
     font-size: 1rem;
@@ -60,7 +103,11 @@
   .btn {
     font-size: 0.8rem;
     /* padding: 1rem 2rem; */
+<<<<<<< HEAD
     border-radius: 2px;
+=======
+    border-radius: 8px;
+>>>>>>> bef9507fe3790f085c7ab454aa010309c6885cb1
     /* background-color: #ff7300;  */
     /* color: #fff; */
     border: none;
@@ -138,4 +185,7 @@ p{
     color: rgb(236, 236, 236);
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> bef9507fe3790f085c7ab454aa010309c6885cb1

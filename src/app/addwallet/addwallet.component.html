@@ -1,0 +1,31 @@
+<div class="wallet-form-container">
+    <div mat-dialog-title>
+      <h1 class="form-title">Wallet Form</h1>
+    </div>
+    <form [formGroup]="walletForm" (ngSubmit)="savePrice()" class="custom-form">
+      <div mat-dialog-content class="content">
+        <div class="row">
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Id</mat-label>
+            <input matInput type="hidden" placeholder="Enter Id" formControlName="id" name="id" aria-label="id">
+          </mat-form-field>
+          <mat-form-field appearance="outline" [class.error]="walletForm.controls['userId'].dirty && walletForm.hasError('required', 'userId')" class="form-field">
+            <mat-label>User ID</mat-label>
+            <input matInput type="text" placeholder="Enter User ID" formControlName="userId" name="userId" aria-label="userId">
+            <small *ngIf="walletForm.controls['userId'].dirty && walletForm.hasError('required', 'userId')" class="text-danger fw-bold">*User ID is Required</small>
+          </mat-form-field>
+          <mat-form-field appearance="outline" [class.error]="walletForm.controls['balance'].dirty && walletForm.hasError('required', 'balance')" class="form-field">
+            <mat-label>Balance</mat-label>
+            <input matInput type="text" placeholder="Enter Balance" formControlName="balance" name="balance" aria-label="balance">
+            <small *ngIf="walletForm.controls['balance'].dirty && walletForm.hasError('required', 'balance')" class="text-danger fw-bold">*Balance is Required</small>
+          </mat-form-field>
+        </div>
+      </div>
+      <div mat-dialog-actions class="action">
+        <button mat-raised-button color="warn" type="button" [mat-dialog-close]="false">Cancel</button>
+        <button mat-raised-button color="accent" type="submit">Save</button>
+        <button mat-raised-button color="accent" type="submit">Save</button>
+      </div>
+    </form>
+  </div>
+  

@@ -49,7 +49,11 @@ return this.http.get<any>(`https://localhost:7125/api/Coin`);
    }
    deleteCoin(id:number):Observable<any>
    {
+<<<<<<< HEAD
       return this.http.delete('https://localhost:7125/api/Coin/${id}')
+=======
+      return this.http.delete('https://localhost:7125/api/Coin/'+id)
+>>>>>>> bef9507fe3790f085c7ab454aa010309c6885cb1
    }
   
   //  openEditCoinForm(id:number):Observable<any>
@@ -64,5 +68,39 @@ return this.http.get<any>(`https://localhost:7125/api/Coin`);
     return this.http.get<any>(`https://api.coingecko.com/api/v3/coins/${coinId}`)
   }
   
+<<<<<<< HEAD
+=======
+///these api is for cionPrice
+
+  private apiUrl = 'http://api.example.com/prices';
+
+
+  getPrices(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl);
+  }
+
+  createPrice(price: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl, price);
+  }
+
+  updatePrice(id: number, price: any): Observable<any> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.put<any>(url, price);
+  }
+
+  deletePrice(id: number): Observable<any> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.delete<any>(url);
+  }
+
+
+
+  
+  
+>>>>>>> bef9507fe3790f085c7ab454aa010309c6885cb1
 }
+
+
+
+
 

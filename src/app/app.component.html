@@ -1,14 +1,23 @@
 
+<<<<<<< HEAD
  
   <header>
     
    
+=======
+<!--  
+  <header>
+    
+   
+   
+>>>>>>> bef9507fe3790f085c7ab454aa010309c6885cb1
     </header> 
    
 <body>
  
   <router-outlet></router-outlet>
  
+<<<<<<< HEAD
 </body>
   <footer class="footer  text-center text-white p-3">
     <div class="container">
@@ -20,6 +29,135 @@
       </ul>
     </div>
   </footer> 
+ 
+=======
+</body>-->
+ <lib-ng-toast></lib-ng-toast> 
+  <mat-sidenav-container fullscreen>
+
+    <mat-sidenav #sidenav>
+
+        <mat-nav-list (click)="sidenav.close()">
+
+            <a mat-list-item [routerLink]="['/coin-list']">
+                <mat-icon  fontIcon="home"></mat-icon>
+                <span>Home</span>
+            </a>
+
+            <a mat-list-item routerLink="about">
+                <mat-icon>question_answer</mat-icon>
+                <span>About</span>
+            </a>
+
+            <a mat-list-item routerLink="coin-detail">
+                <mat-icon>monetization_on</mat-icon>
+                <span>cion Detail</span>
+            </a>
+
+          
+
+            <a mat-list-item routerLink="virtual-scrolling">
+                <mat-icon>import_export</mat-icon>
+                <span>Virtual Scrolling</span>
+            </a>
+
+            <a mat-list-item >
+                <mat-icon>person_add</mat-icon>
+                <span>Register</span>
+            </a>
+
+            <a  mat-list-item    [routerLinkActive]="['link-active']" [routerLink]="['/login']">
+                <mat-icon>account_circle</mat-icon>
+                <span>Login</span>
+            </a>
+
+            <a  (click)="logout()" *ngIf= "getData()" mat-list-item >
+                <mat-icon>exit_to_app</mat-icon>
+                Sign out
+            </a>
+           
+           
+        </mat-nav-list>
+
+
+    </mat-sidenav>
+
+
+    <mat-toolbar color="primary">
+
+        <button mat-icon-button (click)="sidenav.open()">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+        <a mat-button [routerLink]="['/coin-list']">
+            <mat-icon fontIcon="home"></mat-icon>
+            Home
+
+
+        </a>
+
+        <a mat-button *ngIf= "!getData()"[routerLink]="['/signup']">
+            <mat-icon>person_add</mat-icon>
+            Register
+        </a>
+
+      
+
+        <a mat-button   *ngIf="!getData()" [routerLink]="['/login']">
+            <mat-icon>account_circle</mat-icon>
+            Login
+
+
+        </a>
+        
+        <a mat-button *ngIf= "getData()" [routerLink]="['/dashboard']">
+            <mat-icon>portrait</mat-icon>
+           UserDashboard
+
+
+        </a>
+
+        <a mat-button [matMenuTriggerFor]="dropdown"> Menu 
+         <mat-icon>arrow_drop_down</mat-icon>
+
+        </a>
+
+        <mat-menu #dropdown>
+
+            <button mat-menu-item routerLink="/coin-detail"> Coin Detail  <mat-icon>monetization_on</mat-icon>  </button>
+            <button mat-menu-item routerLink="/Transactions">Transactions    <mat-icon>swap_horiz</mat-icon></button>
+            <button mat-menu-item routerLink="/Wallet">Wallet <mat-icon>account_balance_wallet</mat-icon></button>
+            <button mat-menu-item routerLink="/Prices">Prices <mat-icon>attach_money</mat-icon></button>
+
+        </mat-menu>
+
+        <a mat-button *ngIf="getData()" (click)="logout()" [routerLink]="['/coin-list']" class="sign-out-link">
+            <mat-icon>exit_to_app</mat-icon>
+            Sign out
+          </a>
+    </mat-toolbar>
+   
+
+
+    <router-outlet></router-outlet>
+
+  
+>>>>>>> bef9507fe3790f085c7ab454aa010309c6885cb1
+
+</mat-sidenav-container>
+
+
+<!-- <footer class="footer  text-center text-white p-3">
+  <div class="container">
+    <p>&copy; 2023 My Website. All Rights Reserved.</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a class="text-white" href="#">Privacy Policy</a></li>
+      <li class="list-inline-item"><a class="text-white" href="#">Terms of Use</a></li>
+      <li class="list-inline-item"><a class="text-white" href="#">About Us</a></li>
+    </ul>
+  </div>
+</footer>   -->
+
  
 
 

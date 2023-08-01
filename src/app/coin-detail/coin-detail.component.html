@@ -2,11 +2,19 @@
  <div class="container mt-0"> 
 
      
+<<<<<<< HEAD
     <h1 id="tableLabel">Coin Details</h1>
     
     <p>Fetching data from the server.</p>
     <!-- <button class="nav-link active" aria-current="page" routerLink="coin/add ">Create </button> -->
     <button mat-raised-button (click)="openAddEditcoinForm()">Add Coins </button>
+=======
+    <h1 class="h1" id="tableLabel">Coin Details</h1>
+    
+    <p>Fetching data from the server.</p>
+    <!-- <button class="nav-link active" aria-current="page" routerLink="coin/add ">Create </button> -->
+    <button class="btn btn-success" (click)="openAddEditcoinForm()">Add Coin </button>
+>>>>>>> bef9507fe3790f085c7ab454aa010309c6885cb1
     <!-- <button (click)="onCreate()">Create</button> -->
     
     
@@ -27,6 +35,7 @@
         <tr *ngFor="let coin of coins ">
           <!-- Create button -->
 
+<<<<<<< HEAD
           
 <!-- Edit button -->
 <!-- <button (click)="onEdit(coin.id)">Edit</button> -->
@@ -34,6 +43,8 @@
 <!-- Delete button -->
 <!-- <button (click)="onDelete(coin.id)">Delete</button>
  -->
+=======
+>>>>>>> bef9507fe3790f085c7ab454aa010309c6885cb1
        <td>{{ coin.id}}</td>
           <td>{{ coin.name }}</td>
         <td>{{ coin.symbol }}</td>
@@ -41,9 +52,17 @@
         <td>{{ coin.volume24h }}</td>
         <td>{{ coin.change24h }}</td>
         <td>
+<<<<<<< HEAD
           <button class="btn btn-warning" (click)="openEditCoinForm(coin)">Edit</button>
           <button class="btn btn-danger" (click)="deleteCoin(coin.id)">Delete</button>
           <button class="btn btn-success" (click)="deleteCoin(coin.id)">Delete</button>
+=======
+         
+          <button class="btn btn-warning" (click)="openEditCoinForm(coin)">Edit Coin</button>
+          <button class="btn btn-danger" (click)="deleteCoin(coin.id)">Delete Coin</button>
+
+          <!-- <button class="btn btn-success" (click)="deleteCoin(coin.id)">Delete</button> -->
+>>>>>>> bef9507fe3790f085c7ab454aa010309c6885cb1
         </td>
         </tr>
       </tbody>
