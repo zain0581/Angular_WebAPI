@@ -49,6 +49,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { PricesComponent } from './prices/prices.component';
 import { WalletComponent } from './wallet/wallet.component';
 import { AddPriceComponent } from './add-price/add-price.component';
+import { AboutComponent } from './about/about.component';
 
 
 
@@ -76,6 +77,7 @@ import { AddPriceComponent } from './add-price/add-price.component';
   PricesComponent,
   WalletComponent,
   AddPriceComponent,
+  AboutComponent,
   
  
  
