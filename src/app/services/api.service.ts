@@ -66,15 +66,19 @@ return this.http.get<any>(`https://localhost:7125/api/Coin`);
   
 ///these api is for cionPrice
 
-  private apiUrl = 'http://api.example.com/prices';
+ 
+
+
+  private apiUrl = 'https://localhost:7125/api/Price';
 
 
   getPrices(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
   }
 
-  createPrice(price: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl, price);
+  addprice(price:any):Observable<any>{
+    //this is return observable 
+    return this.http.post('https://localhost:7125/api/Price',price)
   }
 
   updatePrice(id: number, price: any): Observable<any> {
@@ -89,9 +93,85 @@ return this.http.get<any>(`https://localhost:7125/api/Coin`);
 
 
 
+  private apit = 'https://localhost:7125/api/Transaction';
+
+
+  gettransactions(): Observable<any[]> {
+    return this.http.get<any[]>(this.apit);
+  }
+  deletetransactions(id: number): Observable<any> {
+    const url = `${this.apit}/${id}`;
+    return this.http.delete<any>(url);
+  }
+
   
+  createTransactions(transaction:any):Observable<any>{
+    //this is return observable 
+    return this.http.post('https://localhost:7125/api/Transaction',transaction)
+  }
+
+
+  updatetransactions(id: number, price: any): Observable<any> {
+    const url = `${this.apit}/${id}`;
+    return this.http.put<any>(url, price);
+  }
+
+ 
+
+
+  // gettransactions(): Observable<any[]> {
+  //   return this.http.get<any[]>('https://localhost:7125/api/Transaction');
+  // }
   
+
+  // private aiUrl = 'https://localhost:7125/api/Wallet';
+
+  // getwallet(): Observable<any[]> {
+   
+  //   return this.http.get<any[]>('https://localhost:7125/api/Wallet');
+  // }
+  private walletapiUrl = 'https://localhost:7125/api/Wallet';
+
+
+  getWallets(): Observable<any[]> {
+    return this.http.get<any[]>(this.walletapiUrl);
+  }
+
+  createWallet(wallet: any): Observable<any> {
+    return this.http.post('https://localhost:7125/api/Wallet',wallet)
+
+  }
+  
+
+
+
+
+
+
+  private apiwUrl = 'https://localhost:7125/api/Wallet';
+
+
+  getwallets(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiwUrl);
+  }
+
+  addwallets(wallet:any):Observable<any>{
+    //this is return observable 
+    return this.http.post('https://localhost:7125/api/Wallet',wallet)
+  }
+
+  updatewallet(id: number, wallet: any): Observable<any> {
+    const url = `${this.apiwUrl}/${id}`;
+    return this.http.put<any>(url, wallet);
+  }
+
+  deletewallet(id: number): Observable<any> {
+    const url = `${this.apiwUrl}/${id}`;
+    return this.http.delete<any>(url);
+  }
 }
+
+
 
 
 

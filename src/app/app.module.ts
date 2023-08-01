@@ -18,7 +18,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './UserComponent/dashboard/dashboard.component';
 
-// import { NgToastModule } from 'ng-angular-popup';
+
 
 
 import { AddCoinComponent } from './add-coin/add-coin.component';
@@ -49,11 +49,13 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { PricesComponent } from './prices/prices.component';
 import { WalletComponent } from './wallet/wallet.component';
 import { AddPriceComponent } from './add-price/add-price.component';
+import { AddtransactionsComponent } from './addtransactions/addtransactions.component';
+import { AddwalletComponent } from './addwallet/addwallet.component';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
 
-
-// import { SidenavComponent } from './sidenav/sidenav.component';
 
 
 
@@ -76,6 +78,8 @@ import { AddPriceComponent } from './add-price/add-price.component';
   PricesComponent,
   WalletComponent,
   AddPriceComponent,
+  AddtransactionsComponent,
+  AddwalletComponent,
   
  
  
@@ -99,13 +103,13 @@ import { AddPriceComponent } from './add-price/add-price.component';
     ReactiveFormsModule,
     MatSortModule,
     MatMenuModule,
-      // ToastrService,
-    // ToastrModule,
     MatSidenavModule,
     MatListModule,
-
-  NgToastModule,
+    NgToastModule,
     DragDropModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule
    
    
    

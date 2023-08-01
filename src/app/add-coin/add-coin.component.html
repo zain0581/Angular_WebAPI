@@ -54,20 +54,20 @@
   </form>
 </div> -->
 
-<div class="coin-form-container">
+<!-- <div class="coin-form-container">
   <div mat-dialog-title>
     <h1 class="form-title">Coin Form</h1>
   </div>
   <form [formGroup]="coinForm" (ngSubmit)="onFormSubmit()" class="custom-form">
     <div mat-dialog-content class="content">
       <div class="row">
-        <mat-form-field appearance="outline" class="form-field">
+        <!-- <mat-form-field appearance="outline" class="form-field">
           <mat-label>Id</mat-label>
           <input matInput type="hidden" placeholder="Enter Id" formControlName="id" name="id" aria-label="Id">
-        </mat-form-field>
+        </mat-form-field> 
         <mat-form-field appearance="outline" [class.error]="coinForm.controls['name'].dirty && coinForm.hasError('required', 'name')" class="form-field">
           <mat-label>Name</mat-label>
-          <input matInput type="text" placeholder="Enter Name" formControlName="name" name="name" aria-label="Name">
+          <input matInput type="text" placeholder="Enter Name" formControlName="name" name="name" aria-label="Name"  class="form-input" >
           <small *ngIf="coinForm.controls['name'].dirty && coinForm.hasError('required', 'name')" class="text-danger fw-bold">*Name is Required</small>
         </mat-form-field>
         <mat-form-field appearance="outline" [class.error]="coinForm.controls['symbol'].dirty && coinForm.hasError('required', 'symbol')" class="form-field">
@@ -101,8 +101,66 @@
     </div>
   </form>
 </div>
+ -->
 
 
 
 
-
+ <div class="coin-form-container">
+  <div class="form-title">
+    <h1 class="form-title">Coin Form</h1>
+  </div>
+  <form [formGroup]="coinForm" (ngSubmit)="onFormSubmit()" class="custom-form">
+    <div class="content">
+      <div class="row">
+        <!-- <div class="form-group">
+          <input type="hidden" formControlName="id">
+        </div> -->
+        <div class="form-group">
+          <label for="name"></label>
+          <input type="text" class="form-control" placeholder="Enter Name" formControlName="name" id="name">
+          <small *ngIf="coinForm.controls['name'].dirty && coinForm.hasError('required', 'name')" class="text-danger fw-bold">*Name is Required</small>
+        </div>
+        <div class="form-group">
+          <label for="symbol"></label>
+          <input type="text" class="form-control" placeholder="Enter Symbol" formControlName="symbol" id="symbol">
+          <small *ngIf="coinForm.controls['symbol'].dirty && coinForm.hasError('required', 'symbol')" class="text-danger fw-bold">*Symbol is Required</small>
+        </div>
+        <div class="form-group">
+          <label for="marketCap"></label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">$</span>
+            </div>
+            <input type="number" class="form-control" placeholder="Enter MarketCap" formControlName="marketCap" id="marketCap">
+          </div>
+          <small *ngIf="coinForm.controls['marketCap'].dirty && coinForm.hasError('required', 'marketCap')" class="text-danger fw-bold">*MarketCap is Required</small>
+        </div>
+        <div class="form-group">
+          <label for="volume24h"></label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">$</span>
+            </div>
+            <input type="number" class="form-control" placeholder="Enter Volume24h" formControlName="volume24h" id="volume24h">
+          </div>
+          <small *ngIf="coinForm.controls['volume24h'].dirty && coinForm.hasError('required', 'volume24h')" class="text-danger fw-bold">*Volume24h is Required</small>
+        </div>
+        <div class="form-group">
+          <label for="change24h"></label>
+          <div class="input-group">
+            <input type="number" class="form-control" placeholder="Enter Change24h" formControlName="change24h" id="change24h">
+            <div class="input-group-append">
+              <span class="input-group-text">%</span>
+            </div>
+          </div>
+          <small *ngIf="coinForm.controls['change24h'].dirty && coinForm.hasError('required', 'change24h')" class="text-danger fw-bold">*Change24h is Required</small>
+        </div>
+      </div>
+    </div>
+    <div class="action">
+      <button type="button" class="btn btn-danger" [mat-dialog-close]="false">Cancel</button>
+      <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+  </form>
+</div>

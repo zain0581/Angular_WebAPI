@@ -1,6 +1,6 @@
 
    .coin-form-container {
-    background-color: #c6faa4;
+    background-color: hsl(0, 0%, 37%);
     padding: 20px;
     /* height: 600px; */
     border-radius: 5px;
@@ -13,7 +13,7 @@
     text-align: center;
     margin: 0;
     color: #333;
-    margin-bottom: -150px;
+    /* margin-bottom: -150px; */
     font-size: 50px ;
   }
   

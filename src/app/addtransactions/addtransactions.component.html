@@ -1,0 +1,30 @@
+
+  <div class="coin-form-container">
+    <div mat-dialog-title>
+      <h1 class="form-title">Transaction Form</h1>
+    </div>
+    <form [formGroup]="transactionForm" (ngSubmit)="saveTransaction()" class="custom-form">
+      <div mat-dialog-content class="content">
+        <div class="row">
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>User ID</mat-label>
+            <input matInput type="text" placeholder="Enter User ID" formControlName="userId" name="userId" aria-label="User ID">
+            <small *ngIf="transactionForm.controls['userId'].dirty && transactionForm.hasError('required', 'userId')" class="text-danger fw-bold">*User ID is Required</small>
+          </mat-form-field>
+          <mat-form-field appearance="outline" [class.error]="transactionForm.controls['Date'].dirty && transactionForm.hasError('required', 'Date')" class="form-field">
+            <mat-label>Date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="Date" placeholder="Select a date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <small *ngIf="transactionForm.controls['Date'].dirty && transactionForm.hasError('required', 'Date')" class="text-danger fw-bold">*Date is Required</small>
+          </mat-form-field>
+        
+        </div>
+      </div>
+      <div mat-dialog-actions class="action">
+        <button mat-raised-button color="warn" type="button" [mat-dialog-close]="false">Cancel</button>
+        <button mat-raised-button color="accent" type="submit">Save</button>
+      </div>
+    </form>
+  </div>
+  

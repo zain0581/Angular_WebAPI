@@ -16,7 +16,8 @@ import { NgToastService } from 'ng-angular-popup';
 })
 export class CoinDetailComponent  {
   coins:Coin[]=[];
-  
+
+
   constructor( private api :ApiService, private router : Router ,private _dialog:MatDialog,private toast:NgToastService)   { 
   }
   openAddEditcoinForm(){
@@ -41,8 +42,8 @@ export class CoinDetailComponent  {
         this.router.navigate(['/login']);
        
       }
-    this.getalldata();
-    this.getalldata();
+    // this.getalldata();
+     this.getalldata();
       }
 
 

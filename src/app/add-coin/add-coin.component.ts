@@ -38,7 +38,7 @@ ngOnInit():void{
       // console.log(this.coinForm.value);
       this._apiService.addCoin(this.coinForm.value).subscribe({
         next:(val:any) => {
-          alert('Coins added successfuully');
+          this.toast.success({detail:"Success Message",summary:"Cion has been Added",duration:5000})
           this._dialogRef.close(true);
         },
         error:(err:any)=>{
