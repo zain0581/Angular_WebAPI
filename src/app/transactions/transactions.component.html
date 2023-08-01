@@ -1,11 +1,14 @@
-<!-- <table>
+<div class="container mt-0"> 
+  <h1 class="h1" id="tableLabel">Transaction Details</h1>
+  <p>Fetching data from the server.</p>
+  <button class="btn btn-success" (click)="openAddEditcoinForm()">Add Transaction</button>
+
+  <table class="table table-striped" aria-labelledby="tableLabel" *ngIf="transactions">
     <thead>
       <tr>
         <th>#</th>
         <th>User ID</th>
         <th>Date</th>
-         Add other table headers as needed
-        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -13,12 +16,12 @@
         <td>{{ transaction.id }}</td>
         <td>{{ transaction.userId }}</td>
         <td>{{ transaction.date }}</td>
-         Display other transaction properties as needed
         <td>
-          <button >Update</button>
-          <button >Delete</button>
+          <button class="btn btn-warning" (click)="openEditTransactionForm(transaction)">Edit Transaction</button>
+        <button class="btn btn-danger" (click)="deletetransaction(transaction.id)">Delete Transaction</button>
         </td>
       </tr>
     </tbody>
-  </table> -->
-  
+  </table>
+</div>
+

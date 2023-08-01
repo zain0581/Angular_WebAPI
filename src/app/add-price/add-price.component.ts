@@ -1,9 +1,9 @@
-import { Component, Inject } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { NgToastService } from 'ng-angular-popup';
-import { ApiService } from '../services/api.service';
 
+ import { Component, Inject } from '@angular/core';
+ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+ import { NgToastService } from 'ng-angular-popup';
+import { ApiService } from '../services/api.service';
 @Component({
   selector: 'app-add-price',
   templateUrl: './add-price.component.html',
@@ -11,6 +11,7 @@ import { ApiService } from '../services/api.service';
 })
 export class AddPriceComponent {
   priceForm: FormGroup;
+
 
   constructor(
     private _fb: FormBuilder,
@@ -21,29 +22,57 @@ export class AddPriceComponent {
   ) {
     this.priceForm = this._fb.group({
       id: [0, Validators.required],
-      coinId: ['', Validators.required],
-      coinValue: ['', Validators.required]
+      coinid: ['', Validators.required],
+      value: ['', Validators.required]
     });
+  }
+  ngOnInit():void{
+    this.priceForm.patchValue(this.data);
   }
 
   savePrice() {
-    if (this.priceForm.valid) {
-      const price = this.priceForm.value;
-      // Call the API service to save the price
-      this._apiService.createPrice(price).subscribe(
-        () => {
-          alert('coin added succ')
-          this._dialogRef.close();
+
+
+
+    if(this.priceForm.valid)
+      {
+      // console.log(this.coinForm.value);
+      this._apiService.addprice(this.priceForm.value).subscribe({
+        next:(val:any) => {
+          this.toast.success({detail:"Success Message",summary:"Price has been Added",duration:5000})
+          this._dialogRef.close(true);
         },
-        (error) => {
-          alert('Failed to add price. Please try again')
-          console.error(error);
+        error:(err:any)=>{
+          console.error(err);
+
         }
-      );
-    } else {
-      alert('Please fill in all the required fields.')
-     
-    }
+
+      })
+
+      }
+      else{
+
+        //throw the erroe using toaster and with required fields
+        //calling the method her::
+         this.validateallformfields(this.priceForm);
+        this.toast.warning({detail:"WARNING",summary:"Miss Something? ",duration:5000})
+
+      }
   }
+  private validateallformfields(priceForm: FormGroup<any>) {
+    Object.keys(priceForm.controls).forEach(field=>{
+      const control = priceForm.get(field);
+      if(control instanceof FormControl){
+        control.markAsDirty({onlySelf:true});
+      }
+      else if (control instanceof FormGroup){
+        this.validateallformfields(control)
+      }
+    })
+
+
+    }
+
 }
+
 

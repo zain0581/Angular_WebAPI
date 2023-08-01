@@ -23,10 +23,15 @@ import { NgToastService } from 'ng-angular-popup';
 })
 export class CoinDetailComponent  {
   coins:Coin[]=[];
+<<<<<<< HEAD
   
 <<<<<<< HEAD
   constructor( private api :ApiService, private toast : NgToastService, private router : Router ,private _dialog:MatDialog)   { 
 =======
+=======
+
+
+>>>>>>> 0a6b96673ccaf801a2dc121f855fdfb89f505385
   constructor( private api :ApiService, private router : Router ,private _dialog:MatDialog,private toast:NgToastService)   { 
 >>>>>>> bef9507fe3790f085c7ab454aa010309c6885cb1
   }
@@ -52,8 +57,8 @@ export class CoinDetailComponent  {
         this.router.navigate(['/login']);
        
       }
-    this.getalldata();
-    this.getalldata();
+    // this.getalldata();
+     this.getalldata();
       }
 
 

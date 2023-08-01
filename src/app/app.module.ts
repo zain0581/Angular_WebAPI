@@ -19,9 +19,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './UserComponent/dashboard/dashboard.component';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { NgToastModule } from 'ng-angular-popup';
 =======
 // import { NgToastModule } from 'ng-angular-popup';
+=======
+
+>>>>>>> 0a6b96673ccaf801a2dc121f855fdfb89f505385
 
 
 import { AddCoinComponent } from './add-coin/add-coin.component';
@@ -53,11 +57,19 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { PricesComponent } from './prices/prices.component';
 import { WalletComponent } from './wallet/wallet.component';
 import { AddPriceComponent } from './add-price/add-price.component';
+<<<<<<< HEAD
 import { AboutComponent } from './about/about.component';
+=======
+import { AddtransactionsComponent } from './addtransactions/addtransactions.component';
+import { AddwalletComponent } from './addwallet/addwallet.component';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+>>>>>>> 0a6b96673ccaf801a2dc121f855fdfb89f505385
 
 
 
 
+<<<<<<< HEAD
 // import { SidenavComponent } from './sidenav/sidenav.component';
 
 import { AddCoinComponent } from './add-coin/add-coin.component';
@@ -81,6 +93,8 @@ import { ReportsComponent } from './reports/reports.component';
 
 // import { SidenavComponent } from './sidenav/sidenav.component';
 
+=======
+>>>>>>> 0a6b96673ccaf801a2dc121f855fdfb89f505385
 
 
 
@@ -110,7 +124,12 @@ import { ReportsComponent } from './reports/reports.component';
   PricesComponent,
   WalletComponent,
   AddPriceComponent,
+<<<<<<< HEAD
   AboutComponent,
+=======
+  AddtransactionsComponent,
+  AddwalletComponent,
+>>>>>>> 0a6b96673ccaf801a2dc121f855fdfb89f505385
   
 >>>>>>> bef9507fe3790f085c7ab454aa010309c6885cb1
  
@@ -142,13 +161,13 @@ import { ReportsComponent } from './reports/reports.component';
     MatMenuModule
 =======
     MatMenuModule,
-      // ToastrService,
-    // ToastrModule,
     MatSidenavModule,
     MatListModule,
-
-  NgToastModule,
+    NgToastModule,
     DragDropModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule
    
    
    
